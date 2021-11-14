@@ -1,0 +1,28 @@
+{
+    "name": "rockolacrudprueba",
+    "version": "1.0.0",
+    "description": "Proyecto Rockola mintic",
+    "main": "index.js",
+    "scripts": {
+        "build": "tsc",
+        "start": "npm run build && node dist/app.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Wallemz/rockolaCrudPrueba.git"
+    },
+    "author": "William Porras @Wallemz",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/Wallemz/rockolaCrudPrueba/issues"
+    },
+    "homepage": "https://github.com/Wallemz/rockolaCrudPrueba#readme",
+    "dependencies": {
+        "express": "^4.17.1",
+        "typescript": "^4.4.4"
+    },
+    "devDependencies": {
+        "@types/express": "^4.17.13"
+    }
+}
