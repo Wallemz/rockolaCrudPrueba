@@ -1,8 +1,9 @@
 import express from 'express';      // Importamos Express
 import cancionesRoutes from './routes/canciones';
+import config from './config/config';
 
 const app = express();              // Función que ofrece express la guardamos en app
-const port = 3000;                  // Guardamos el puerto, en este caso 300
+//const port = 3000;                // Guardamos el puerto, en este caso 300 // Cambiado a Var de entorno
 
 // DEFINICIÓN BODY JSON
 app.use(express.json());
@@ -42,7 +43,7 @@ app.get('/prueba', async (req, res, next)=>{  // Función para definir GET (ruta
     // Asincrono
     await promesa.then((res)=>{    // Si se cumplió // el await hace  que espere que esa promesa se reseulva
         console.log(res);
-    }).catch((error)=>{             // Si no se cumplió
+    }).catch((error)=>{            // Si no se cumplió
         console.log(error);
     })
 
@@ -51,6 +52,6 @@ app.get('/prueba', async (req, res, next)=>{  // Función para definir GET (ruta
 })
 
 // LISTEN DEL SERVICIO
-app.listen(port, ()=>{              // Listen es uno de los métodos de express (Puerto, función)
-    return console.log(`INFO: Servidor corriendo en el puerto ${port}.`);
+app.listen(config.PORT, ()=>{              // Listen es uno de los métodos de express (Puerto, función)
+    return console.log(`INFO: Servidor corriendo en el puerto ${config.PORT}.`);
 });

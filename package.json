@@ -20,6 +20,7 @@
     "homepage": "https://github.com/Wallemz/rockolaCrudPrueba#readme",
     "dependencies": {
         "express": "^4.17.1",
+        "mysql2": "^2.3.3",
         "typescript": "^4.4.4"
     },
     "devDependencies": {
