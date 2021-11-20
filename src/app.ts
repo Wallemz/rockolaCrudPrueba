@@ -1,6 +1,8 @@
 import express from 'express';      // Importamos Express
 import cancionesRoutes from './routes/canciones';
 import config from './config/config';
+import errorHandler from './middlewares/error';
+import validarRol from './middlewares/validaRol';
 
 const app = express();              // Función que ofrece express la guardamos en app
 //const port = 3000;                // Guardamos el puerto, en este caso 300 // Cambiado a Var de entorno
@@ -10,7 +12,11 @@ app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 
 // RUTAS
-cancionesRoutes(app);               // Importo cancionesRoutes de canciones.ts, le paso la constante de express "app"
+//app.use(validarRol);                  // Uso de middleware Global en todos los archivos de routes al principio
+cancionesRoutes(app);                   // Importo cancionesRoutes de canciones.ts, le paso la constante de express "app"
+playlistRoutes(app);                    // Importo cancionesRoutes de playlist.ts, le paso la constante de express "app
+//app.use(errorHandler);                // Uso de middleware Global en todos los archivos de routes al final
+
 app.get('/prueba', async (req, res, next)=>{  // Función para definir GET (ruta, función(request,response,next))
     
     // REQUEST
