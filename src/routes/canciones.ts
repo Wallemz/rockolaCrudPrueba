@@ -9,7 +9,7 @@ const cancionesRoutes = (app) =>{
 
     // REQ
 
-    router.use(validarRol);           // Use el middleware al antes de la principal
+    //router.use(validarRol);           // Use el middleware al antes de la principal
 
     router.get('/obtenerCanciones', obtenerCanciones);  // Ahora creamos rutas con el router
     router.get('/obtenerCancion/:id', obtenerCancion);  // Ahora creamos rutas con el router

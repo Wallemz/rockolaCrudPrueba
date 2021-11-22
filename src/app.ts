@@ -11,10 +11,19 @@ const app = express();              // Función que ofrece express la guardamos 
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 
+// Permitir peticiones de otro dominio (Frontend)
+app.use((_, res, next) => {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Headers', '*');
+    res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE');
+    res.header('Allow', 'GET, POST, OPTIONS, PUT, DELETE');
+    next();
+    });
+
 // RUTAS
 //app.use(validarRol);                  // Uso de middleware Global en todos los archivos de routes al principio
 cancionesRoutes(app);                   // Importo cancionesRoutes de canciones.ts, le paso la constante de express "app"
-playlistRoutes(app);                    // Importo cancionesRoutes de playlist.ts, le paso la constante de express "app
+//playlistRoutes(app);                    // Importo cancionesRoutes de playlist.ts, le paso la constante de express "app
 //app.use(errorHandler);                // Uso de middleware Global en todos los archivos de routes al final
 
 app.get('/prueba', async (req, res, next)=>{  // Función para definir GET (ruta, función(request,response,next))

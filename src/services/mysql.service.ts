@@ -36,7 +36,7 @@ const executeQuery = (query:string):Promise<any> =>{    // Retorna una promesa
             });
             connection.end();
         } catch (error) {
-            console.log(error);
+            //console.log(error);
             reject(error);
         }
     })
