@@ -13,9 +13,9 @@ const cancionesRoutes = (app) =>{
 
     router.get('/obtenerCanciones', obtenerCanciones);  // Ahora creamos rutas con el router
     router.get('/obtenerCancion/:id', obtenerCancion);  // Ahora creamos rutas con el router
-    router.post('/agregarCancion', agregarCancion);  // Ahora creamos rutas con el router
-    router.put('/actualizarCancion/:id', actualizarCancion);  // Ahora creamos rutas con el router
-    router.delete('/eliminarCancion/:id', eliminarCancion);  // Ahora creamos rutas con el router
+    router.post('/agregarCancion', agregarCancion);     // Ahora creamos rutas con el router
+    router.put('/actualizarCancion/:id', actualizarCancion);    // Ahora creamos rutas con el router
+    router.delete('/eliminarCancion/:id', eliminarCancion);     // Ahora creamos rutas con el router
 
     router.use(errorHandler);           // Use el middleware al final
 
