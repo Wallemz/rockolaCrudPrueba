@@ -11,7 +11,7 @@ const app = express();              // Función que ofrece express la guardamos 
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 
-// Permitir peticiones de otro dominio (Frontend)
+// Permitir peticiones de otro dominio (Frontend) SOLUCION ERROR CORS
 app.use((_, res, next) => {
     res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Headers', '*');
